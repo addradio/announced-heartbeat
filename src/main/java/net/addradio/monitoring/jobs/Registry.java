@@ -73,7 +73,7 @@ public class Registry
 		return null;
 	}
 
-	private Job get(Long jobId)
+	public Job get(Long jobId)
 	{
 		Job found = em.find(Job.class, jobId);
 		if (found != null)

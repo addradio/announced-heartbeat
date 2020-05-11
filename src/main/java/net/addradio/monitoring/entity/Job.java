@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -15,8 +14,7 @@ public class Job
 	@GeneratedValue
 	private long jobId;
 
-	@Lob
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	// TODO 11.5.2020 schneider/fnowotny vergewissern, dass das in der Datenbank gesetzt ist
 	private String name;
 
