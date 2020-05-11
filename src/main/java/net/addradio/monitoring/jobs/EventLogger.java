@@ -29,10 +29,11 @@ public class EventLogger
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<LifecycleEvent> getAll()
+	public List<LifecycleEvent> getEvents(Job job)
 	{
-		String criteriaQuery = "from LifecycleEvent job";
+		String criteriaQuery = "from LifecycleEvent event where event.job=:job";
 		Query query = em.createQuery(criteriaQuery);
+		query.setParameter("job", job);
 		try
 		{
 			return (List<LifecycleEvent>) query.getResultList();

@@ -51,6 +51,7 @@ public class MonitoringService
 		return Response.ok(jobId).build();
 	}
 
+	// TODO schneider/fnowotny funktioniert noch nicht wenn Events des Jobs da sind
 	@DELETE
 	@Path("{id}")
 	@Produces(MediaType.TEXT_PLAIN)
